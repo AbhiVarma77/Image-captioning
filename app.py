@@ -52,5 +52,5 @@ if st.checkbox("Generate_Caption"):
       st.success(predict_step(our_image))
 elif st.checkbox("About"):
    st.subheader("About Image Captioning App")
-   st.markdown("Built with Streamlit by [Abhi Varma](https://Abhi-varma-personal-website.streamlit.app/)")
-   st.markdown("Demo applicaton of the following model [credit](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning/)")
+   st.markdown("Built with Streamlit by [Abhi Varma](https://share.streamlit.io/signup)")
+   st.markdown("Demo applicaton of the following model [credit](https://huggingface.co/Abhivarma)")
