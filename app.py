@@ -5,7 +5,7 @@ from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTok
 #pickle.load(open('energy_model.pkl', 'rb'))
 #vocab = np.load('w2i.p', allow_pickle=True)
 st.title("Image_Captioning_App")
-@st.experimental_singleton
+@st.cache_resource 
 def load_models():
     model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
     feature_extractor = ViTFeatureExtractor.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
@@ -17,7 +17,7 @@ if "photo" not in st.session_state:
 c2, c3 = st.columns([2,1])
 def change_photo_state():
 	st.session_state["photo"]="done"
-@st.cache
+@st.cache_data
 def load_image(img):
 	im = Image.open(img)
 	return im
